@@ -1,4 +1,4 @@
-package memoria;
+//package memoria;
 
 public class Memoria {
     private int valor;
