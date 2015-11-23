@@ -1,6 +1,13 @@
+package memoria;
+
 public class BlocoProcesso {
-	escreverProcesso (BlocoMemoria memoria, Processo processo, int posicaoInicial){
-		for (int i =  posicaoInicial + processo.getBase() ; i < posicaoInicial + processo.getBase() + processo.getTamanho(); i++){
-			memoria[i] = processo.getId();		
-		}
+    public boolean escreverProcesso (BlocoMemoria memoria, Processo processo, int posicaoInicial){
+        if (memoria.getQuantidade() >= processo.getTamanho()){
+            for (int i =  posicaoInicial ; i < processo.getTamanho(); i++){
+                memoria.setMemoria(i,processo.getId());		
+            }
+            return true;
+        }    
+        return false;
+    }
 }
