@@ -2,6 +2,9 @@ package memoria;
 
 public class Processo{
     private int tamanho,base,limite,id;
+    private Area Principal;
+    private Area_Sobreposicao teste;
+    
     public Processo(int tamanho,int base, int limite, int id){
         this.tamanho	= tamanho;
         this.base	= base;
@@ -21,4 +24,3 @@ public class Processo{
             return this.tamanho;
     }
 }
-
