@@ -2,6 +2,8 @@ package memoria;
 
 public class Memoria {
     private int valor;
+    private Area principal;
+    private Area sobreposicao;
     
     public int getValor(){
         return this.valor;
