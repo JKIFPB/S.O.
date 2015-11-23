@@ -1,10 +1,9 @@
 package memoria;
 
-
 public class BlocoMemoria {
     private Memoria[] memoria;
     private int qtd;
-    public void criar (int tam){
+    public BlocoMemoria(int tam){
         memoria = new Memoria[tam]; 
         qtd = tam;
     }
@@ -23,5 +22,10 @@ public class BlocoMemoria {
             memoria[i] = null;
         }
     }
-
+    public void  setMemoria (int i, int id){
+        this.memoria[i].setValor(id);
+    }
+    public int getQuantidade(){
+        return this.qtd;
+    } 
 }
