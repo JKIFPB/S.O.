@@ -11,4 +11,10 @@ public class Memoria {
     public void setValor (int valor){
         this.valor = valor;
     }
+    public int getAreaPrincipalInicio(){
+        return this.principal.getInicio();
+    }
+    public int getAreaPrincialFim(){
+        return this.principal.getFim();
+    }
 }
