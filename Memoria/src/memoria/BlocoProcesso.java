@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> e0d1d06d05865a3cd01253e393e9c8e6c9826477
 package memoria;
 
 public class BlocoProcesso {
@@ -14,8 +11,5 @@ public class BlocoProcesso {
         }    
         return false;
     }
-<<<<<<< HEAD
    
-=======
->>>>>>> e0d1d06d05865a3cd01253e393e9c8e6c9826477
 }

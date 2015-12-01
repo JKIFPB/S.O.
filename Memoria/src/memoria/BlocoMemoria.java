@@ -1,15 +1,21 @@
 
-<<<<<<< HEAD
 package memoria;
 
-=======
->>>>>>> e0d1d06d05865a3cd01253e393e9c8e6c9826477
 public class BlocoMemoria {
     private Memoria [] memoria;
     private int qtd;
+    private Area principal;
+    private Area sobrePosicao;
+    
     public BlocoMemoria(int tam){
         memoria = new Memoria[tam]; 
         qtd = tam;
+    }
+    public Area[] getDescricao(){  
+        Area[] descricao = new Area[2];
+        descricao[0]=principal;
+        descricao[1]=sobrePosicao;
+        return descricao;
     }
     public void limpar (){
         for (int i = 0; i < qtd; i++){
@@ -29,12 +35,7 @@ public class BlocoMemoria {
     public void  setMemoria (int i, int id){
         this.memoria[i].setValor(id);
     }
-<<<<<<< HEAD
-    public Area[] getDescricao(int i){
-        return memoria[i].getDescricao();
-    }
-=======
->>>>>>> e0d1d06d05865a3cd01253e393e9c8e6c9826477
+    
     public int getQuantidade(){
         return this.qtd;
     } 
