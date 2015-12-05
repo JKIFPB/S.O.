@@ -32,4 +32,9 @@ public class Processo {
     public int getTamanho(){
             return this.tamanho;
     }
+    public void apagarProcesso(Processo p){
+        p = null;
+    }
+
+    
 }
