@@ -4,21 +4,18 @@ package memoria;
 
 public class Processo {
     private int tamanho,base,limite,id;
-    private Area principal;
+    private Area principal = new Area();
     private AreaSobreposicao[] sobreposicao;
     private int quantidadeSobrePosicao;
     
-    public Processo(int tamanho,int base, int limite, int id){
+    public Processo(int tamanho,int base, int limite, int id, int pInicial, int pFinal){
         this.tamanho	= tamanho;
         this.base	= base;
         this.limite	= limite;
-        this.id		= id;
-    }
-    public Area[] getDescricao(int id){  
-        Area[] descricao = new Area[2];
-        descricao[0]=principal;
-        descricao[1]=sobreposicao[id];
-        return descricao;
+        this.id	= id;
+        this.principal.setInicio(pInicial);
+        this.principal.setFim(pFinal);
+  
     }
     public int getBase (){
             return this.base;
