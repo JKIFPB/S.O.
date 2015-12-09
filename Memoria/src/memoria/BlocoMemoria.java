@@ -58,5 +58,16 @@ public class BlocoMemoria {
         }
             return true;
         }   
-        
+    public boolean alocarProcessoSobreposicao (Processo p){
+        int resto;
+        int qtdSobre;
+        if (this.qtd <= p.getTamanho()){
+            resto = p.getTamanho() - (this.principal.getFim() - this.principal.getInicio());
+            qtdSobre  = (this.sobrePosicao.getFim() - this.sobrePosicao.getInicio()) / resto;
+            
+            return true;
+        }
+         return false;       
     }
+    
+}
