@@ -61,10 +61,17 @@ public class BlocoMemoria {
     public boolean alocarProcessoSobreposicao (Processo p){
         int resto;
         int qtdSobre;
+        int valor;
         if (this.qtd <= p.getTamanho()){
             resto = p.getTamanho() - (this.principal.getFim() - this.principal.getInicio());
             qtdSobre  = (this.sobrePosicao.getFim() - this.sobrePosicao.getInicio()) / resto;
-            
+            p.criarAreaSobre(qtdSobre);
+            valor =  resto / qtdSobre;
+            for (int j = 0; j < qtdSobre; j++){
+                p.getAreaSobreposicao(j).setInicio(resto*j);
+                p.getAreaSobreposicao(j).setFim((resto*(j+1)) -1);
+                p.getAreaSobreposicao(j).setId(j);
+            }
             return true;
         }
          return false;       

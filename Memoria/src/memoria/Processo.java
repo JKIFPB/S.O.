@@ -1,6 +1,8 @@
 
 package memoria;
 
+//INICIO    = (Ms*i)
+//FINAL     = (Ms*(i+1))-1
 
 public class Processo {
     private int tamanho,base,limite,id;
@@ -32,6 +34,11 @@ public class Processo {
     public void apagarProcesso(Processo p){
         p = null;
     }
-
-    
+    public void criarAreaSobre(int qtdSobre){
+           sobreposicao = new AreaSobreposicao[qtdSobre];
+    }
+    public AreaSobreposicao getAreaSobreposicao(int id){
+        return this.sobreposicao[id];
+    }
+ 
 }
