@@ -36,6 +36,10 @@ public class Processo {
     }
     public void criarAreaSobre(int qtdSobre){
            sobreposicao = new AreaSobreposicao[qtdSobre];
+           this.quantidadeSobrePosicao = qtdSobre;
+    }
+    public  int getQtdSobreposicao(){
+        return this.quantidadeSobrePosicao;
     }
     public AreaSobreposicao getAreaSobreposicao(int id){
         return this.sobreposicao[id];
