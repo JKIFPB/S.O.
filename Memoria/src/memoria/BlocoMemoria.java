@@ -50,7 +50,7 @@ public class BlocoMemoria {
         return this.qtd;
     }
     public boolean  alocarProcessoSimples (Processo p){
-        if (this.qtd <= p.getTamanho()){
+        if (this.qtd < p.getTamanho()){
             return false;
         }    
         for (int i =  0 ; i < p.getTamanho(); i++){
@@ -59,10 +59,10 @@ public class BlocoMemoria {
             return true;
         }   
     public boolean alocarProcessoSobreposicao (Processo p){
-        int resto;
-        int qtdSobre;
-        int valor;
-        if (this.qtd <= p.getTamanho()){
+        int resto; //Resto da memória principal menos processo.
+        int qtdSobre;// Quantas sobreposição serão necessária ser feita
+        int valor; // Valor de cada sobreposição
+        if (this.qtd < p.getTamanho()){
             resto = p.getTamanho() - (this.principal.getFim() - this.principal.getInicio());
             qtdSobre  = (this.sobrePosicao.getFim() - this.sobrePosicao.getInicio()) / resto;
             p.criarAreaSobre(qtdSobre);
@@ -73,8 +73,14 @@ public class BlocoMemoria {
                 p.getAreaSobreposicao(j).setId(j);
             }
             return true;
-        }
+       }
          return false;       
     }
-    
+    public boolean trocarAreaSobreposicao(Processo p, int id){
+        if (id < p.getQtdSobreposicao()){
+            p.getAreaSobreposicao(p.getId()).setId(id);
+            return true;
+        }
+        return false;
+    }
 }
